@@ -20,7 +20,12 @@ relationships:
 # The configuration of app when it is exposed to the web.
 web:
   commands:
-    start: "node index.js"
+    start: "node nodejs/main.js"
+  locations:
+    '/':
+      passthru: true
+      request_buffering:
+        enabled: false
 
 # The size of the persistent disk of the application (in MB).
 disk: 512
